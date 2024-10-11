@@ -1,0 +1,173 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "sobre-mi"
+        "proyectos"
+        "contacto"
+        "footer";
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+header {
+    grid-area: header;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 2em;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.sobre-mi {
+    grid-area: sobre-mi;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.sobre-mi h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.proyectos {
+    grid-area: proyectos;
+}
+
+.proyectos h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.proyecto {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.proyecto img {
+    max-width: 100%;
+    height: auto;
+}
+
+.proyecto h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.proyecto p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.proyecto a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.contacto {
+    grid-area: contacto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contacto p {
+    font-size: 1.2rem;
+}
+
+.contacto a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+/* Media Queries para diseño responsivo */
+
+/* Pantallas pequeñas */
+@media (max-width: 600px) {
+    .grid-proyectos {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        grid-template-areas: 
+            "header"
+            "sobre-mi"
+            "proyectos"
+            "contacto"
+            "footer";
+    }
+}
+
+/* Pantallas medianas */
+@media (min-width: 600px) and (max-width: 900px) {
+    .grid-proyectos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+        grid-template-areas: 
+            "header"
+            "sobre-mi"
+            "proyectos"
+            "contacto"
+            "footer";
+    }
+}
+
+/* Pantallas grandes */
+@media (min-width: 900px) {
+    .grid-proyectos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .container {
+        grid-template-areas: 
+            "header"
+            "sobre-mi"
+            "proyectos"
+            "contacto"
+            "footer";
+    }
+}
